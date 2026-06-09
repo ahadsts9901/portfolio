@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, MessageCircle, ExternalLink } from 'lucide-react'
+import { Mail, MessageCircle, Code, Briefcase, Share2 } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,32 +8,37 @@ export function Footer() {
     {
       label: 'GitHub',
       href: 'https://github.com/ahadsts9901',
+      icon: Code,
     },
     {
       label: 'LinkedIn',
       href: 'https://linkedin.com/in/muhammad-ahad-3136b1236',
+      icon: Briefcase,
     },
     {
       label: 'Email',
       href: 'mailto:muhammadahadansari2@gmail.com',
+      icon: Mail,
     },
     {
       label: 'WhatsApp',
       href: 'https://wa.me/923130019086',
+      icon: MessageCircle,
     },
     {
       label: 'Instagram',
       href: 'https://instagram.com/ahadsts9901',
+      icon: Share2,
     },
   ]
 
   return (
-    <footer className="bg-card border-t border-border/40 mt-24">
+    <footer className="bg-card border-t border-border mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            <div className="text-2xl font-bold text-foreground mb-2">
               MA
             </div>
             <p className="text-sm text-foreground/60">
@@ -122,21 +127,24 @@ export function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="border-t border-border/40 pt-8 mb-8">
+        <div className="border-t border-border pt-8 mb-8">
           <div className="flex flex-wrap items-center gap-4 mb-8">
-            {socialLinks.map((social) => (
-              <a
-                key={social.href}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground transition-colors text-xs font-semibold"
-                aria-label={social.label}
-                title={social.label}
-              >
-                {social.label.charAt(0)}
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              const Icon = social.icon
+              return (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-secondary hover:bg-muted text-foreground transition-colors"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              )
+            })}
           </div>
 
           {/* Copyright */}

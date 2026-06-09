@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Mail, MessageCircle, Phone } from 'lucide-react'
 
 export default function ContactPage() {
@@ -84,10 +85,10 @@ export default function ContactPage() {
                 href={method.href}
                 target={method.href.startsWith('http') ? '_blank' : undefined}
                 rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group bg-background border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+                className="group bg-background border border-border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-cyan-500">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-primary">
                     {method.label.charAt(0)}
                   </div>
                   <div>
@@ -114,17 +115,17 @@ export default function ContactPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary transition-colors">
                 <h3 className="font-bold text-foreground mb-2">Response Time</h3>
                 <p className="text-foreground/70">I typically respond within 24 hours.</p>
               </div>
 
-              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary transition-colors">
                 <h3 className="font-bold text-foreground mb-2">Availability</h3>
                 <p className="text-foreground/70">Open to full-time roles, freelance projects, and consulting.</p>
               </div>
 
-              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+              <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary transition-colors">
                 <h3 className="font-bold text-foreground mb-2">Location</h3>
                 <p className="text-foreground/70">Karachi, Pakistan (UTC+5)</p>
               </div>
@@ -181,7 +182,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 disabled:opacity-50"
+                className="w-full px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50"
                 disabled={submitted}
               >
                 {submitted ? '✓ Message Sent!' : 'Send Message'}
@@ -198,13 +199,13 @@ export default function ContactPage() {
       </section>
 
       {/* Alternative Contact Methods */}
-      <section className="py-20 px-4 bg-gradient-to-r from-cyan-500/5 to-blue-600/5 border-t border-border/40">
+      <section className="py-20 px-4 bg-secondary border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Or reach me directly at:</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:muhammadahadansari2@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-80 border border-primary transition-all duration-300 font-semibold"
             >
               <Mail className="w-5 h-5" />
               Email
@@ -213,14 +214,14 @@ export default function ContactPage() {
               href="https://wa.me/923130019086"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-80 border border-primary transition-all duration-300 font-semibold"
             >
               <MessageCircle className="w-5 h-5" />
               WhatsApp
             </a>
             <a
               href="tel:+923130019086"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:opacity-80 border border-primary transition-all duration-300 font-semibold"
             >
               <Phone className="w-5 h-5" />
               Call
