@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   description: 'Full-stack developer with 3+ years of experience. Built 8+ products, trained 50+ students. Expert in MERN, Next.js, DevOps, and startup leadership.',
   keywords: ['Full Stack Developer', 'Next.js', 'React', 'Node.js', 'DevOps', 'Pakistan'],
   creator: 'Muhammad Ahad',
-  metadataBase: new URL('https://muhammadahad.dev'),
+  metadataBase: new URL('https://ahad-portfolio-web.vercel.app'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://muhammadahad.dev',
+    url: 'https://ahad-portfolio-web.vercel.app',
     title: 'Muhammad Ahad | Full Stack Developer',
     description: 'Full-stack developer with 3+ years of experience building scalable web applications',
     images: [
