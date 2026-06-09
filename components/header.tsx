@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Moon, Sun } from 'lucide-react'
+import { Menu, X, Moon, Sun, Download } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { ColorPicker } from './color-picker'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -50,8 +51,21 @@ export function Header() {
           ))}
         </div>
 
-        {/* Theme Toggle & Mobile Menu */}
+        {/* Controls & Mobile Menu */}
         <div className="flex items-center gap-4">
+          {/* Download Resume Button */}
+          <a
+            href="/resume.pdf"
+            download="Muhammad-Ahad-Resume.pdf"
+            className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
+          >
+            <Download className="w-4 h-4" />
+            Resume
+          </a>
+
+          {/* Color Picker */}
+          <ColorPicker />
+
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -95,6 +109,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href="/resume.pdf"
+              download="Muhammad-Ahad-Resume.pdf"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </a>
           </div>
         </div>
       )}
