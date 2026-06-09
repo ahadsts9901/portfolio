@@ -69,7 +69,7 @@ export function Header() {
           {mounted && (
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors cursor-pointer"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -83,7 +83,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+            className="md:hidden p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isOpen ? (

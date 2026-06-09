@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Palette } from 'lucide-react'
 
 const COLOR_PALETTE = [
@@ -18,6 +18,7 @@ export function ColorPicker() {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [selectedColor, setSelectedColor] = useState(COLOR_PALETTE[0])
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -33,6 +34,18 @@ export function ColorPicker() {
       applyColor(COLOR_PALETTE[0])
     }
   }, [])
+
+  // Close the palette when clicking outside of it
+  useEffect(() => {
+    if (!isOpen) return
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isOpen])
 
   const applyColor = (color: typeof COLOR_PALETTE[0]) => {
     document.documentElement.style.setProperty('--purple-light', color.light)
@@ -51,10 +64,10 @@ export function ColorPicker() {
   if (!mounted) return null
 
   return (
-    <div className="relative">
+    <div className="relative" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors flex items-center gap-2"
+        className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors flex items-center gap-2 cursor-pointer"
         aria-label="Color palette"
         title="Change accent color"
       >
@@ -69,7 +82,7 @@ export function ColorPicker() {
               <button
                 key={color.name}
                 onClick={() => handleColorChange(color)}
-                className={`w-8 h-8 rounded-lg transition-all ${
+                className={`w-8 h-8 rounded-lg transition-all cursor-pointer ${
                   selectedColor.name === color.name
                     ? 'ring-2 ring-foreground scale-110'
                     : 'hover:scale-105'

@@ -61,7 +61,7 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="py-20 px-4 bg-card border-y border-border md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12">My Journey</h2>
+          <h2 className="text-4xl font-bold mb-12 animate-slide-in-left">My Journey</h2>
           <div className="space-y-8">
             <p className="text-lg text-foreground/70 leading-relaxed">
               I started my development journey with a passion for building web applications. What began as curiosity about how websites work has evolved into a comprehensive skill set spanning frontend, backend, and DevOps engineering.

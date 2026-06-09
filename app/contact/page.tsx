@@ -67,8 +67,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
-          <p className="text-xl text-foreground/70">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left">Get in Touch</h1>
+          <p className="text-xl text-foreground/70 animate-slide-in-bottom">
             Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
       {/* Contact Methods */}
       <section className="py-16 px-4 bg-card border-y border-border/40">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">Connect With Me</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center animate-slide-in-left">Connect With Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {contactMethods.map((method) => (
               <a
@@ -108,7 +108,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Let&apos;s collaborate</h2>
+              <h2 className="text-3xl font-bold mb-6 animate-slide-in-left">Let&apos;s collaborate</h2>
               <p className="text-foreground/70 text-lg leading-relaxed mb-6">
                 Whether you&apos;re looking to build a new product, scale an existing one, or need technical guidance, I&apos;m here to help.
               </p>
@@ -208,7 +208,7 @@ export default function ContactPage() {
       {/* Alternative Contact Methods */}
       <section className="py-20 px-4 bg-secondary border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Or reach me directly at:</h2>
+          <h2 className="text-3xl font-bold mb-8 animate-slide-in-left">Or reach me directly at:</h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:muhammadahadansari2@gmail.com"
