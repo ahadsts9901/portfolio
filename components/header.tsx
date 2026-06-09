@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Moon, Sun, Download } from 'lucide-react'
+import { Menu, X, Moon, Sun, Download, CodeXml } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { ColorPicker } from './color-picker'
 
@@ -32,9 +32,10 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex-1 font-bold text-2xl text-foreground hover:opacity-70 transition-opacity"
+          className="flex-1 flex items-center text-foreground hover:opacity-70 transition-opacity"
+          aria-label="Home"
         >
-          MA
+          <CodeXml className="w-8 h-8" strokeWidth={2.5} />
         </Link>
 
         {/* Desktop Navigation */}
