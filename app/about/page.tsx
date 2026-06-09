@@ -43,6 +43,12 @@ const experience = [
     period: 'JULY 2023 - DEC 2023',
     description: 'Designed and developed secure, scalable backend systems. Engineered multiple products including ERP systems, auction platforms, and gym management systems.',
   },
+  {
+    company: 'Techzone Learning',
+    position: 'Lead Trainer MERN Stack',
+    period: 'MAY 2023 - JUNE 2023',
+    description: 'Guided students in developing scalable web applications. Trained 20+ Students',
+  },
 ]
 
 export default function AboutPage() {

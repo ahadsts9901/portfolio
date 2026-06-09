@@ -174,7 +174,7 @@ export default function Home() {
               onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
             >
-              <div className="h-48 bg-secondary relative overflow-hidden"></div>
+              {/* <div className="h-48 bg-secondary relative overflow-hidden"></div> */}
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">E-Commerce Platform</h3>
                 <p className="text-foreground/60 mb-6">
@@ -207,7 +207,7 @@ export default function Home() {
               onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
             >
-              <div className="h-48 bg-secondary relative overflow-hidden"></div>
+              {/* <div className="h-48 bg-secondary relative overflow-hidden"></div> */}
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">SaaS Coupon Platform</h3>
                 <p className="text-foreground/60 mb-6">

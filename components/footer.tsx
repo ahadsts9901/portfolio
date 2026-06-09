@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { Mail, MessageCircle, Code, Briefcase, Share2, CodeXml } from 'lucide-react'
+import {
+  Mail,
+  CodeXml
+} from 'lucide-react'
+
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { AiOutlineYoutube as FaYoutube } from "react-icons/ai";
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -8,12 +14,12 @@ export function Footer() {
     {
       label: 'GitHub',
       href: 'https://github.com/ahadsts9901',
-      icon: Code,
+      icon: FaGithub,
     },
     {
       label: 'LinkedIn',
       href: 'https://linkedin.com/in/muhammad-ahad-3136b1236',
-      icon: Briefcase,
+      icon: FaLinkedinIn,
     },
     {
       label: 'Email',
@@ -23,12 +29,22 @@ export function Footer() {
     {
       label: 'WhatsApp',
       href: 'https://wa.me/923130019086',
-      icon: MessageCircle,
+      icon: FaWhatsapp,
     },
+    // {
+    //   label: 'Instagram',
+    //   href: 'https://instagram.com/ahadsts9901',
+    //   icon: Share2,
+    // },
+    // {
+    //   label: 'Facebook',
+    //   href: 'https://www.facebook.com/abdulahad.ansari.1481',
+    //   icon: FaFacebookF,
+    // },
     {
-      label: 'Instagram',
-      href: 'https://instagram.com/ahadsts9901',
-      icon: Share2,
+      label: 'Youtube',
+      href: 'https://www.youtube.com/@ahadsts9901',
+      icon: FaYoutube,
     },
   ]
 

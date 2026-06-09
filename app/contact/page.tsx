@@ -1,7 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, MessageCircle, Phone } from 'lucide-react'
+import {
+  Mail, MessageCircle, Phone
+} from 'lucide-react'
+
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { AiOutlineYoutube as FaYoutube } from "react-icons/ai";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,13 +23,30 @@ export default function ContactPage() {
     })
   }
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   // Simulate form submission
+  //   console.log('Form submitted:', formData)
+  //   setSubmitted(true)
+  //   setTimeout(() => {
+  //     setFormData({ name: '', email: '', message: '' })
+  //     setSubmitted(false)
+  //   }, 3000)
+  // }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
-    console.log('Form submitted:', formData)
+
+    await fetch("https://script.google.com/macros/s/AKfycbyNc_sNFe1-oQZAfVxKmroGNlhbAVGB8Rngk__occknnDocR1vEVKQFa7sWqGfsp321/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(formData),
+    })
+
     setSubmitted(true)
+
     setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' })
+      setFormData({ name: "", email: "", message: "" })
       setSubmitted(false)
     }, 3000)
   }
@@ -34,31 +56,43 @@ export default function ContactPage() {
       label: 'Email',
       value: 'muhammadahadansari2@gmail.com',
       href: 'mailto:muhammadahadansari2@gmail.com',
+      icon: Mail,
     },
     {
       label: 'Phone',
       value: '+92 313 0019086',
       href: 'tel:+923130019086',
+      icon: Phone,
     },
     {
       label: 'WhatsApp',
       value: '+92 313 0019086',
       href: 'https://wa.me/923130019086',
+      icon: FaWhatsapp,
     },
     {
       label: 'GitHub',
       value: '@ahadsts9901',
       href: 'https://github.com/ahadsts9901',
+      icon: FaGithub,
     },
     {
       label: 'LinkedIn',
       value: 'Muhammad Ahad',
       href: 'https://linkedin.com/in/muhammad-ahad-3136b1236',
+      icon: FaLinkedinIn,
     },
+    // {
+    //   label: 'Youtube',
+    //   value: 'Bits With Ahad',
+    //   href: 'https://instagram.com/ahadsts9901',
+    //   icon: FaYoutube,
+    // },
     {
-      label: 'Instagram',
-      value: '@ahadsts9901',
-      href: 'https://instagram.com/ahadsts9901',
+      label: 'Youtube',
+      value: 'Bits With Ahad',
+      href: 'https://youtube.com/@ahadsts9901',
+      icon: FaYoutube,
     },
   ]
 
@@ -89,7 +123,8 @@ export default function ContactPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-primary">
-                    {method.label.charAt(0)}
+                    {/* {method.label.charAt(0)} */}
+                    <method.icon className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-sm text-foreground/60">{method.label}</p>
