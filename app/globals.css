@@ -127,6 +127,27 @@
   html {
     @apply font-sans;
   }
+  
+  /* Text selection styling */
+  ::selection {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  ::-moz-selection {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  .dark ::selection {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .dark ::-moz-selection {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
 }
 
 @layer utilities {

@@ -26,12 +26,12 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/40">
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="font-bold text-2xl bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          className="font-bold text-2xl text-foreground hover:opacity-70 transition-opacity"
         >
           MA
         </Link>
@@ -45,7 +45,7 @@ export function Header() {
               className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-full transition-all duration-300" />
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
         </div>
@@ -59,9 +59,9 @@ export function Header() {
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-amber-500" />
+                <Sun className="w-5 h-5 text-foreground" />
               ) : (
-                <Moon className="w-5 h-5 text-slate-600" />
+                <Moon className="w-5 h-5 text-foreground" />
               )}
             </button>
           )}
@@ -83,7 +83,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-border/40 animate-in fade-in slide-in-from-top-2 duration-300">
+        <div className="md:hidden bg-background border-b border-border animate-in fade-in slide-in-from-top-2 duration-300">
           <div className="px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <Link

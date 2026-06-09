@@ -16,7 +16,7 @@ export default function Home() {
               width={200}
               height={200}
               priority
-              className="rounded-2xl w-48 h-48 object-cover border-4 border-primary"
+              className="rounded-full w-48 h-48 object-cover border-4 border-primary"
             />
           </div>
 
