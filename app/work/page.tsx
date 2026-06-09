@@ -188,11 +188,11 @@ export default function WorkPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold">My Work</h1>
-            <p className="text-xl text-foreground/60 max-w-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold animate-slide-in-left">My Work</h1>
+            <p className="text-xl text-foreground/60 max-w-2xl animate-slide-in-bottom">
               Over 8+ products built and delivered. From startup MVPs to enterprise-scale applications, here are some of the projects I&apos;ve worked on.
             </p>
           </div>
@@ -200,19 +200,20 @@ export default function WorkPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-12 px-4 pb-24">
+      <section className="py-12 px-4 md:px-12 lg:px-20 pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group h-full bg-gradient-to-br from-card to-background border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 flex flex-col"
+                className="group h-full bg-card border border-border rounded-2xl p-6 hover:border-purple-400 transition-all duration-300 hover:shadow-lg flex flex-col animate-slide-in-bottom"
+                style={{ animationDelay: `${index * 0.05}s` } as React.CSSProperties}
               >
                 {/* Header */}
                 <div className="mb-4 flex-1">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-1 group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-lg font-bold mb-1 group-hover:text-purple-400 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-xs text-foreground/50 font-medium">{project.company}</p>
@@ -248,7 +249,8 @@ export default function WorkPage() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-cyan-500 hover:text-cyan-400 font-semibold transition-colors mt-auto group/link"
+                    className="inline-flex items-center gap-2 font-semibold transition-colors mt-auto group/link hover:opacity-70"
+                    style={{ color: 'var(--purple-light)' }}
                   >
                     <span>View Project</span>
                     <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -261,29 +263,29 @@ export default function WorkPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-card border-y border-border/40">
+      <section className="py-20 px-4 md:px-12 lg:px-20 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <p className="text-5xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center animate-slide-in-bottom" style={{ animationDelay: '0.1s' } as React.CSSProperties}>
+              <p className="text-5xl font-bold mb-2" style={{ color: 'var(--purple-light)' }}>
                 22+
               </p>
               <p className="text-foreground/60">Projects Delivered</p>
             </div>
-            <div className="text-center">
-              <p className="text-5xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
+              <p className="text-5xl font-bold mb-2" style={{ color: 'var(--purple-light)' }}>
                 3+
               </p>
               <p className="text-foreground/60">Years Experience</p>
             </div>
-            <div className="text-center">
-              <p className="text-5xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
+              <p className="text-5xl font-bold mb-2" style={{ color: 'var(--purple-light)' }}>
                 50+
               </p>
               <p className="text-foreground/60">Students Trained</p>
             </div>
-            <div className="text-center">
-              <p className="text-5xl font-bold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            <div className="text-center animate-slide-in-bottom" style={{ animationDelay: '0.4s' } as React.CSSProperties}>
+              <p className="text-5xl font-bold mb-2" style={{ color: 'var(--purple-light)' }}>
                 8+
               </p>
               <p className="text-foreground/60">Products Built</p>
