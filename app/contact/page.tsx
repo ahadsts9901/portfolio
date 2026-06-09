@@ -1,0 +1,233 @@
+'use client'
+
+import { Mail, MessageCircle, Phone } from 'lucide-react'
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simulate form submission
+    console.log('Form submitted:', formData)
+    setSubmitted(true)
+    setTimeout(() => {
+      setFormData({ name: '', email: '', message: '' })
+      setSubmitted(false)
+    }, 3000)
+  }
+
+  const contactMethods = [
+    {
+      label: 'Email',
+      value: 'muhammadahadansari2@gmail.com',
+      href: 'mailto:muhammadahadansari2@gmail.com',
+    },
+    {
+      label: 'Phone',
+      value: '+92 313 0019086',
+      href: 'tel:+923130019086',
+    },
+    {
+      label: 'WhatsApp',
+      value: '+92 313 0019086',
+      href: 'https://wa.me/923130019086',
+    },
+    {
+      label: 'GitHub',
+      value: '@ahadsts9901',
+      href: 'https://github.com/ahadsts9901',
+    },
+    {
+      label: 'LinkedIn',
+      value: 'Muhammad Ahad',
+      href: 'https://linkedin.com/in/muhammad-ahad-3136b1236',
+    },
+    {
+      label: 'Instagram',
+      value: '@ahadsts9901',
+      href: 'https://instagram.com/ahadsts9901',
+    },
+  ]
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+          <p className="text-xl text-foreground/70">
+            Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Methods */}
+      <section className="py-16 px-4 bg-card border-y border-border/40">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Connect With Me</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {contactMethods.map((method) => (
+              <a
+                key={method.label}
+                href={method.href}
+                target={method.href.startsWith('http') ? '_blank' : undefined}
+                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="group bg-background border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-cyan-500">
+                    {method.label.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/60">{method.label}</p>
+                    <p className="font-semibold text-foreground">{method.value}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Contact Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Let&apos;s collaborate</h2>
+              <p className="text-foreground/70 text-lg leading-relaxed mb-6">
+                Whether you&apos;re looking to build a new product, scale an existing one, or need technical guidance, I&apos;m here to help.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+                <h3 className="font-bold text-foreground mb-2">Response Time</h3>
+                <p className="text-foreground/70">I typically respond within 24 hours.</p>
+              </div>
+
+              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+                <h3 className="font-bold text-foreground mb-2">Availability</h3>
+                <p className="text-foreground/70">Open to full-time roles, freelance projects, and consulting.</p>
+              </div>
+
+              <div className="bg-card border border-border/40 rounded-2xl p-6 hover:border-cyan-500/50 transition-colors">
+                <h3 className="font-bold text-foreground mb-2">Location</h3>
+                <p className="text-foreground/70">Karachi, Pakistan (UTC+5)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 disabled:opacity-50"
+                disabled={submitted}
+              >
+                {submitted ? '✓ Message Sent!' : 'Send Message'}
+              </button>
+
+              {submitted && (
+                <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/50 text-green-600 text-sm text-center animate-in fade-in">
+                  Thanks for reaching out! I&apos;ll get back to you soon.
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Alternative Contact Methods */}
+      <section className="py-20 px-4 bg-gradient-to-r from-cyan-500/5 to-blue-600/5 border-t border-border/40">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">Or reach me directly at:</h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:muhammadahadansari2@gmail.com"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+            >
+              <Mail className="w-5 h-5" />
+              Email
+            </a>
+            <a
+              href="https://wa.me/923130019086"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
+            </a>
+            <a
+              href="tel:+923130019086"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-500/50 transition-all duration-300 font-semibold"
+            >
+              <Phone className="w-5 h-5" />
+              Call
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
