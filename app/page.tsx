@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Code2, Zap, Users } from 'lucide-react'
@@ -32,19 +34,19 @@ export default function Home() {
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 pt-4">
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-purple-400 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.4s' } as React.CSSProperties}>
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.4s' } as React.CSSProperties}>
               <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 3+
               </p>
               <p className="text-sm text-foreground/60">Years Experience</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-purple-400 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
               <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 8+
               </p>
               <p className="text-sm text-foreground/60">Products Built</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-purple-400 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.6s' } as React.CSSProperties}>
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.6s' } as React.CSSProperties}>
               <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 50+
               </p>
@@ -159,7 +161,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-purple-400 transition-all duration-300 hover:shadow-lg animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
+            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-purple-400 animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
               <div className="h-48 bg-secondary relative overflow-hidden"></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">E-Commerce Platform</h3>
@@ -189,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Project 2 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-purple-400 transition-all duration-300 hover:shadow-lg animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
+            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-purple-400 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <div className="h-48 bg-secondary relative overflow-hidden"></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">SaaS Coupon Platform</h3>

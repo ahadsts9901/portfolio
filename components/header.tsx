@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link
           href="/"
@@ -52,11 +52,11 @@ export function Header() {
         </div>
 
         {/* Controls & Mobile Menu */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-center gap-2 sm:gap-4">
           {/* Download Resume Button */}
           <a
-            href="/resume.pdf"
-            download="Muhammad-Ahad-Resume.pdf"
+            href="/resume.txt"
+            download="Muhammad-Ahad-Resume.txt"
             className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
           >
             <Download className="w-4 h-4" />
@@ -110,8 +110,8 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="/resume.pdf"
-              download="Muhammad-Ahad-Resume.pdf"
+              href="/resume.txt"
+              download="Muhammad-Ahad-Resume.txt"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:bg-secondary hover:text-foreground transition-colors"
             >

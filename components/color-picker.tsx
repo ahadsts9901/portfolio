@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react'
 import { Palette } from 'lucide-react'
 
 const COLOR_PALETTE = [
-  { name: 'Purple', light: '#a78bfa', dark: '#c4b5fd', primary: '#7c3aed' },
-  { name: 'Blue', light: '#60a5fa', dark: '#93c5fd', primary: '#2563eb' },
-  { name: 'Pink', light: '#f472b6', dark: '#fbcfe8', primary: '#ec4899' },
-  { name: 'Green', light: '#4ade80', dark: '#86efac', primary: '#22c55e' },
-  { name: 'Orange', light: '#fb923c', dark: '#fed7aa', primary: '#f97316' },
-  { name: 'Red', light: '#f87171', dark: '#fca5a5', primary: '#ef4444' },
-  { name: 'Teal', light: '#14b8a6', dark: '#99f6e4', primary: '#0d9488' },
-  { name: 'Indigo', light: '#818cf8', dark: '#c7d2fe', primary: '#4f46e5' },
+  { name: 'Purple', light: '#a78bfa', dark: '#c4b5fd', primary: '#7c3aed', hover: '#a855f7' },
+  { name: 'Blue', light: '#60a5fa', dark: '#93c5fd', primary: '#2563eb', hover: '#3b82f6' },
+  { name: 'Pink', light: '#f472b6', dark: '#fbcfe8', primary: '#ec4899', hover: '#f43f5e' },
+  { name: 'Green', light: '#4ade80', dark: '#86efac', primary: '#22c55e', hover: '#16a34a' },
+  { name: 'Orange', light: '#fb923c', dark: '#fed7aa', primary: '#f97316', hover: '#ea580c' },
+  { name: 'Red', light: '#f87171', dark: '#fca5a5', primary: '#ef4444', hover: '#dc2626' },
+  { name: 'Teal', light: '#14b8a6', dark: '#99f6e4', primary: '#0d9488', hover: '#0f766e' },
+  { name: 'Indigo', light: '#818cf8', dark: '#c7d2fe', primary: '#4f46e5', hover: '#4338ca' },
 ]
 
 export function ColorPicker() {
@@ -37,6 +37,8 @@ export function ColorPicker() {
   const applyColor = (color: typeof COLOR_PALETTE[0]) => {
     document.documentElement.style.setProperty('--purple-light', color.light)
     document.documentElement.style.setProperty('--purple-dark', color.dark)
+    document.documentElement.style.setProperty('--accent-primary', color.primary)
+    document.documentElement.style.setProperty('--accent-hover', color.hover)
   }
 
   const handleColorChange = (color: typeof COLOR_PALETTE[0]) => {

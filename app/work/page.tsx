@@ -206,14 +206,19 @@ export default function WorkPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group h-full bg-card border border-border rounded-2xl p-6 hover:border-purple-400 transition-all duration-300 hover:shadow-lg flex flex-col animate-slide-in-bottom"
+                className="group h-full bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:shadow-lg flex flex-col animate-slide-in-bottom"
                 style={{ animationDelay: `${index * 0.05}s` } as React.CSSProperties}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
               >
                 {/* Header */}
                 <div className="mb-4 flex-1">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-1 group-hover:text-purple-400 transition-colors">
+                      <h3 className="text-lg font-bold mb-1 transition-colors" style={{ color: 'inherit' }}
+                        onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--accent-hover)'}
+                        onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'inherit'}
+                      >
                         {project.title}
                       </h3>
                       <p className="text-xs text-foreground/50 font-medium">{project.company}</p>
