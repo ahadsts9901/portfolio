@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Moon, Sun, Download } from 'lucide-react'
+import { Menu, X, Moon, Sun, Download, CodeXml } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { ColorPicker } from './color-picker'
 
@@ -32,9 +32,10 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex-1 font-bold text-2xl text-foreground hover:opacity-70 transition-opacity"
+          className="flex-1 flex items-center text-foreground hover:opacity-70 transition-opacity"
+          aria-label="Home"
         >
-          MA
+          <CodeXml className="w-8 h-8" strokeWidth={2.5} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -55,8 +56,8 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end gap-2 sm:gap-4">
           {/* Download Resume Button */}
           <a
-            href="/resume.txt"
-            download="Muhammad-Ahad-Resume.txt"
+            href="/Muhammad-Ahad-Resume.pdf"
+            download="Muhammad-Ahad-Resume.pdf"
             className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
           >
             <Download className="w-4 h-4" />
@@ -110,8 +111,8 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="/resume.txt"
-              download="Muhammad-Ahad-Resume.txt"
+            href="/Muhammad-Ahad-Resume.pdf"
+            download="Muhammad-Ahad-Resume.pdf"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:bg-secondary hover:text-foreground transition-colors"
             >

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, MessageCircle, Code, Briefcase, Share2 } from 'lucide-react'
+import { Mail, MessageCircle, Code, Briefcase, Share2, CodeXml } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -38,8 +38,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-2xl font-bold text-foreground mb-2">
-              MA
+            <div className="text-foreground mb-2">
+              <CodeXml className="w-8 h-8" strokeWidth={2.5} />
             </div>
             <p className="text-sm text-foreground/60">
               Full-stack developer building modern web applications.

@@ -13,7 +13,7 @@ export default function Home() {
           {/* Profile Image */}
           <div className="relative inline-block animate-slide-in-top">
             <Image
-              src="/profile.png"
+              src="/ahad.png"
               alt="Muhammad Ahad"
               width={200}
               height={200}
