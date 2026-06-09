@@ -145,8 +145,10 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-foreground/40 focus:outline-none transition-colors"
                   placeholder="Your name"
+                  onFocus={(e) => e.target.style.borderColor = 'var(--purple-light)'}
+                  onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                 />
               </div>
 
@@ -160,8 +162,11 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-foreground/40 focus:outline-none transition-colors"
                   placeholder="your@email.com"
+                  style={{ '--tw-border-color': 'var(--border)', '--focus-border': 'var(--purple-light)' } as React.CSSProperties}
+                  onFocus={(e) => e.target.style.borderColor = 'var(--purple-light)'}
+                  onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                 />
               </div>
 
@@ -175,7 +180,9 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border/40 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-500/50 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-foreground/40 focus:outline-none transition-colors resize-none"
+                  onFocus={(e) => e.target.style.borderColor = 'var(--purple-light)'}
+                  onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                   placeholder="Tell me about your project..."
                 />
               </div>

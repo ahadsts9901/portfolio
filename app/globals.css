@@ -132,24 +132,39 @@
     @apply font-sans;
   }
   
+  /* Input and textarea focus styling */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--purple-light) !important;
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2) !important;
+  }
+  
+  .dark input:focus,
+  .dark textarea:focus,
+  .dark select:focus {
+    border-color: var(--purple-dark) !important;
+    box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.2) !important;
+  }
+  
   /* Text selection styling */
   ::selection {
-    background-color: #000000 !important;
+    background-color: #a78bfa !important;
     color: #ffffff !important;
   }
   
   ::-moz-selection {
-    background-color: #000000 !important;
+    background-color: #a78bfa !important;
     color: #ffffff !important;
   }
   
   .dark ::selection {
-    background-color: #ffffff !important;
+    background-color: #c4b5fd !important;
     color: #000000 !important;
   }
   
   .dark ::-moz-selection {
-    background-color: #ffffff !important;
+    background-color: #c4b5fd !important;
     color: #000000 !important;
   }
 }
