@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Code2, Zap, Users } from 'lucide-react'
@@ -6,10 +8,10 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 py-20">
+      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-12 lg:px-20 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Profile Image */}
-          <div className="relative inline-block">
+          <div className="relative inline-block animate-slide-in-top">
             <Image
               src="/profile.png"
               alt="Muhammad Ahad"
@@ -22,30 +24,30 @@ export default function Home() {
 
           {/* Title & Subtitle */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-balance">
+            <h1 className="text-5xl md:text-7xl font-bold text-balance animate-slide-in-bottom">
               Hello, I&apos;m Muhammad Ahad
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/70 text-balance">
+            <p className="text-xl md:text-2xl text-foreground/70 text-balance animate-fade-in" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               Full-stack developer passionate about building scalable web applications and leading technical teams
             </p>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 pt-4">
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-primary transition-colors">
-              <p className="text-2xl md:text-3xl font-bold text-primary">
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.4s' } as React.CSSProperties}>
+              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 3+
               </p>
               <p className="text-sm text-foreground/60">Years Experience</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-primary transition-colors">
-              <p className="text-2xl md:text-3xl font-bold text-primary">
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
+              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 8+
               </p>
               <p className="text-sm text-foreground/60">Products Built</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-4 hover:border-primary transition-colors">
-              <p className="text-2xl md:text-3xl font-bold text-primary">
+            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom hover:border-purple-400" style={{ animationDelay: '0.6s' } as React.CSSProperties}>
+              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
                 50+
               </p>
               <p className="text-sm text-foreground/60">Students Trained</p>
@@ -73,12 +75,12 @@ export default function Home() {
       </section>
 
       {/* Expertise Section */}
-      <section className="py-20 px-4 bg-card border-y border-border">
+      <section className="py-20 px-4 md:px-12 lg:px-20 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Core Expertise</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 animate-slide-in-left">Core Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Frontend */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300">
+            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.1s' } as React.CSSProperties}>
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Code2 className="w-6 h-6 text-primary" />
               </div>
@@ -99,7 +101,7 @@ export default function Home() {
             </div>
 
             {/* Backend */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300">
+            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Zap className="w-6 h-6 text-primary" />
               </div>
@@ -120,7 +122,7 @@ export default function Home() {
             </div>
 
             {/* DevOps & Leadership */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300">
+            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="w-6 h-6 text-primary" />
               </div>
@@ -144,10 +146,10 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-16">
-            <h2 className="text-4xl font-bold">Featured Projects</h2>
+            <h2 className="text-4xl font-bold animate-slide-in-left">Featured Projects</h2>
             <Link
               href="/work"
               className="flex items-center gap-2 text-primary hover:opacity-70 font-semibold transition-opacity"
@@ -159,7 +161,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-purple-400 animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
               <div className="h-48 bg-secondary relative overflow-hidden"></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">E-Commerce Platform</h3>
@@ -189,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Project 2 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-lg">
+            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-purple-400 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <div className="h-48 bg-secondary relative overflow-hidden"></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">SaaS Coupon Platform</h3>
@@ -222,9 +224,9 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-secondary border-y border-border">
+      <section className="py-20 px-4 md:px-12 lg:px-20 bg-secondary border-y border-border">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
+          <div className="space-y-4 animate-fade-in">
             <h2 className="text-4xl font-bold">Ready to Build Something Great?</h2>
             <p className="text-lg text-foreground/60">
               Let&apos;s collaborate on your next project and bring your ideas to life.

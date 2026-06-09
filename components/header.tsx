@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Moon, Sun } from 'lucide-react'
+import { Menu, X, Moon, Sun, Download } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { ColorPicker } from './color-picker'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +28,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link
           href="/"
@@ -50,8 +51,21 @@ export function Header() {
           ))}
         </div>
 
-        {/* Theme Toggle & Mobile Menu */}
-        <div className="flex items-center gap-4">
+        {/* Controls & Mobile Menu */}
+        <div className="flex items-center justify-center gap-2 sm:gap-4">
+          {/* Download Resume Button */}
+          <a
+            href="/resume.txt"
+            download="Muhammad-Ahad-Resume.txt"
+            className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
+          >
+            <Download className="w-4 h-4" />
+            Resume
+          </a>
+
+          {/* Color Picker */}
+          <ColorPicker />
+
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -95,6 +109,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href="/resume.txt"
+              download="Muhammad-Ahad-Resume.txt"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:bg-secondary hover:text-foreground transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Download Resume
+            </a>
           </div>
         </div>
       )}

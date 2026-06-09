@@ -81,6 +81,8 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #d0d0d0;
   --sidebar-ring: #000000;
+  --purple-light: #a78bfa;
+  --purple-dark: #c4b5fd;
 }
 
 .dark {
@@ -98,6 +100,8 @@
   --muted-foreground: #999999;
   --accent: #ffffff;
   --accent-foreground: #000000;
+  --purple-light: #c4b5fd;
+  --purple-dark: #a78bfa;
   --destructive: #ff5555;
   --border: #333333;
   --input: #2a2a2a;
@@ -128,24 +132,39 @@
     @apply font-sans;
   }
   
+  /* Input and textarea focus styling */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--purple-light) !important;
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2) !important;
+  }
+  
+  .dark input:focus,
+  .dark textarea:focus,
+  .dark select:focus {
+    border-color: var(--purple-dark) !important;
+    box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.2) !important;
+  }
+  
   /* Text selection styling */
   ::selection {
-    background-color: #000000 !important;
+    background-color: #a78bfa !important;
     color: #ffffff !important;
   }
   
   ::-moz-selection {
-    background-color: #000000 !important;
+    background-color: #a78bfa !important;
     color: #ffffff !important;
   }
   
   .dark ::selection {
-    background-color: #ffffff !important;
+    background-color: #c4b5fd !important;
     color: #000000 !important;
   }
   
   .dark ::-moz-selection {
-    background-color: #ffffff !important;
+    background-color: #c4b5fd !important;
     color: #000000 !important;
   }
 }
@@ -182,6 +201,40 @@
     }
   }
 
+  @keyframes slide-in-from-left {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes text-shimmer {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
   @keyframes glow {
     0%, 100% {
       box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
@@ -201,6 +254,18 @@
 
   .animate-slide-in-bottom {
     animation: slide-in-from-bottom 0.5s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-from-left 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-from-right 0.6s ease-out;
+  }
+
+  .animate-text-shimmer {
+    animation: text-shimmer 2s ease-in-out infinite;
   }
 
   .animate-glow {
