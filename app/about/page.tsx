@@ -84,13 +84,11 @@ export default function AboutPage() {
             {experience.map((job, index) => (
               <div
                 key={index}
-                className="border-l-2 pl-8 transition-colors animate-slide-in-bottom"
+                className="accent-left-hover border-l-2 pl-8 animate-slide-in-bottom"
                 style={{ 
                   borderLeftColor: 'var(--purple-light)',
                   animationDelay: `${index * 0.1}s`
                 } as React.CSSProperties}
-                onMouseEnter={(e) => e.currentTarget.style.borderLeftColor = 'var(--accent-hover)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderLeftColor = 'var(--purple-light)'}
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                   <div>
@@ -183,19 +181,13 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 animate-slide-in-left">Currently Learning</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-card border border-border rounded-2xl p-8 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
               <h3 className="text-2xl font-bold mb-3">DSA (Data Structures & Algorithms)</h3>
               <p className="text-foreground/70">
                 Strengthening my problem-solving skills and preparing for advanced system design challenges.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-8 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <h3 className="text-2xl font-bold mb-3">Blockchain & Web3</h3>
               <p className="text-foreground/70">
                 Exploring decentralized applications, smart contracts, and the future of web technologies.

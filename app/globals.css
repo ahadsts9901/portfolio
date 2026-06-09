@@ -170,6 +170,26 @@
 }
 
 @layer utilities {
+  /* Dynamic accent hover utilities (driven by the active color palette) */
+  .accent-border-hover {
+    transition: border-color 0.3s ease;
+  }
+  .accent-border-hover:hover {
+    border-color: var(--accent-hover) !important;
+  }
+  .accent-left-hover {
+    transition: border-color 0.3s ease;
+  }
+  .accent-left-hover:hover {
+    border-left-color: var(--accent-hover) !important;
+  }
+  .accent-text-hover {
+    transition: color 0.2s ease;
+  }
+  .accent-text-hover:hover {
+    color: var(--accent-hover) !important;
+  }
+
   @keyframes fade-in {
     from {
       opacity: 0;
