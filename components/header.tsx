@@ -56,8 +56,8 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end gap-2 sm:gap-4">
           {/* Download Resume Button */}
           <a
-            href="/resume.txt"
-            download="Muhammad-Ahad-Resume.txt"
+            href="/Muhammad-Ahad-Resume.pdf"
+            download="Muhammad-Ahad-Resume.pdf"
             className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
           >
             <Download className="w-4 h-4" />
@@ -111,8 +111,8 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="/resume.txt"
-              download="Muhammad-Ahad-Resume.txt"
+            href="/Muhammad-Ahad-Resume.pdf"
+            download="Muhammad-Ahad-Resume.pdf"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:bg-secondary hover:text-foreground transition-colors"
             >
