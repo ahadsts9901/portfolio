@@ -27,7 +27,8 @@ export const metadata: Metadata = {
     images: [
       {
         // url: '/og-image.png',
-        url: 'https://ahad-portfolio-web.vercel.app/og-image.png',
+        // url: 'https://ahad-portfolio-web.vercel.app/og-image.png',
+        url: "https://res.cloudinary.com/do6sd9nyx/image/upload/v1781052905/og_bgezoh.png",
         width: 1200,
         height: 630,
         alt: 'Muhammad Ahad',
