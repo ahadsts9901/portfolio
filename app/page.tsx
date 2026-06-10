@@ -25,7 +25,7 @@ export default function Home() {
           {/* Title & Subtitle */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold text-balance animate-slide-in-bottom">
-              Hello, I&apos;m Muhammad Ahad
+              Meet <br /> Muhammad Ahad
             </h1>
             <p className="text-xl md:text-2xl text-foreground/70 text-balance animate-fade-in" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               Full-stack developer passionate about building scalable web applications and leading technical teams
@@ -119,7 +119,7 @@ export default function Home() {
                 Designing scalable server architectures with Node.js, Express, NestJS, and database optimization.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['Node.js', 'Express', 'NestJS', 'PostgreSQL'].map((tech) => (
+                {['Node.js', 'Express', 'NestJS', 'MongoDB', 'PostgreSQL'].map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
@@ -214,7 +214,7 @@ export default function Home() {
                   Multi-language, multi-currency ERP system with advanced couponing, analytics dashboard, and vendor management.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['Next.js', 'PostgreSQL', 'AWS', 'React Query'].map((tech) => (
+                  {['Next.js', 'MongoDB', 'AWS', 'Redux'].map((tech) => (
                     <span
                       key={tech}
                       className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"

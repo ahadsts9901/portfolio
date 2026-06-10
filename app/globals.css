@@ -125,13 +125,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
-  
+
   /* Input and textarea focus styling */
   input:focus,
   textarea:focus,
@@ -139,53 +141,67 @@
     border-color: var(--purple-light) !important;
     box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2) !important;
   }
-  
+
   .dark input:focus,
   .dark textarea:focus,
   .dark select:focus {
     border-color: var(--purple-dark) !important;
     box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.2) !important;
   }
-  
+
   /* Text selection styling */
   ::selection {
-    background-color: var(--accent-hover) !important;
+    background-color: color-mix(in srgb,
+        var(--accent-hover) 50%,
+        transparent) !important;
     color: #ffffff !important;
   }
-  
+
   ::-moz-selection {
-    background-color: var(--accent-hover) !important;
+    background-color: color-mix(in srgb,
+        var(--accent-hover) 50%,
+        transparent) !important;
     color: #ffffff !important;
   }
-  
+
   .dark ::selection {
-    background-color: var(--accent-hover) !important;
+    background-color: color-mix(in srgb,
+        var(--accent-hover) 50%,
+        transparent) !important;
     color: #ffffff !important;
   }
-  
+
   .dark ::-moz-selection {
-    background-color: var(--accent-hover) !important;
+    background-color: color-mix(in srgb,
+        var(--accent-hover) 50%,
+        transparent) !important;
     color: #ffffff !important;
   }
 }
 
 @layer utilities {
+
   /* Dynamic accent hover utilities (driven by the active color palette) */
   .accent-border-hover {
     transition: border-color 0.3s ease;
   }
+
   .accent-border-hover:hover {
     border-color: var(--accent-hover) !important;
   }
+
   .accent-left-hover {
     transition: border-color 0.3s ease;
   }
+
   .accent-left-hover:hover {
     border-left-color: var(--accent-hover) !important;
   }
+
   .accent-text-hover {
     transition: color 0.2s ease;
   }
+
   .accent-text-hover:hover {
     color: var(--accent-hover) !important;
   }
@@ -194,6 +210,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -204,6 +221,7 @@
       transform: translateY(-10px);
       opacity: 0;
     }
+
     to {
       transform: translateY(0);
       opacity: 1;
@@ -215,6 +233,7 @@
       transform: translateY(10px);
       opacity: 0;
     }
+
     to {
       transform: translateY(0);
       opacity: 1;
@@ -226,6 +245,7 @@
       transform: translateX(-20px);
       opacity: 0;
     }
+
     to {
       transform: translateX(0);
       opacity: 1;
@@ -237,6 +257,7 @@
       transform: translateX(20px);
       opacity: 0;
     }
+
     to {
       transform: translateX(0);
       opacity: 1;
@@ -247,18 +268,23 @@
     0% {
       opacity: 0.5;
     }
+
     50% {
       opacity: 1;
     }
+
     100% {
       opacity: 0.5;
     }
   }
 
   @keyframes glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
     }
+
     50% {
       box-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
     }
