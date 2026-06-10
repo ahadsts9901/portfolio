@@ -166,7 +166,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-foreground/50">
             <p>&copy; {currentYear} Muhammad Ahad. All rights reserved.</p>
-            <p>Designed & Built with Next.js + Tailwind CSS</p>
+            {/* <p>Designed & Built with Next.js + Tailwind CSS</p> */}
           </div>
         </div>
       </div>
