@@ -26,7 +26,8 @@ export const metadata: Metadata = {
     description: 'Full-stack developer with 3+ years of experience building scalable web applications',
     images: [
       {
-        url: '/og-image.png',
+        // url: '/og-image.png',
+        url: 'https://ahad-portfolio-web.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Muhammad Ahad',
