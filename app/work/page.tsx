@@ -74,7 +74,7 @@ const projects = [
     title: 'AI Auto Trading Platform',
     description: 'An automated trading platform featuring real-time data integration.',
     role: 'Frontend & Backend',
-    technologies: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Supabase', 'Third Party Integration'],
+    technologies: ['Next.js', 'Express.js', 'MongoDB', 'Supabase', 'Third Party Integration'],
     link: 'https://tradewolf.ai',
     company: 'Tradewolf',
   },
