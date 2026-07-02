@@ -91,7 +91,7 @@ export default function AboutPage() {
               <div
                 key={index}
                 className="accent-left-hover border-l-2 pl-8 animate-slide-in-bottom"
-                style={{ 
+                style={{
                   borderLeftColor: 'var(--purple-light)',
                   animationDelay: `${index * 0.1}s`
                 } as React.CSSProperties}
@@ -193,10 +193,32 @@ export default function AboutPage() {
                 Strengthening my problem-solving skills and preparing for advanced system design challenges.
               </p>
             </div>
+
             <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <h3 className="text-2xl font-bold mb-3">Blockchain & Web3</h3>
               <p className="text-foreground/70">
                 Exploring decentralized applications, smart contracts, and the future of web technologies.
+              </p>
+            </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.4s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">Game Development</h3>
+              <p className="text-foreground/70">
+                Building interactive 3D experiences, mastering scripting, and designing games within Roblox Studio.
+              </p>
+            </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">DevOps</h3>
+              <p className="text-foreground/70">
+                Streamlining deployment pipelines, automating infrastructure, and optimizing application scalability.
+              </p>
+            </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.6s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">Ethical Hacking</h3>
+              <p className="text-foreground/70">
+                Understanding penetration testing, securing network infrastructure, and identifying system vulnerabilities.
               </p>
             </div>
           </div>
