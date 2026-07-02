@@ -57,7 +57,7 @@ export default function Home() {
               onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
             >
               <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
-                50+
+                100+
               </p>
               <p className="text-sm text-foreground/60">Students Trained</p>
             </div>

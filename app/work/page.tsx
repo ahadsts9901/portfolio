@@ -71,6 +71,14 @@ const projects = [
     company: 'Ayo 24x7',
   },
   {
+    title: 'AI Auto Trading Platform',
+    description: 'An automated trading platform featuring real-time data integration.',
+    role: 'Frontend & Backend',
+    technologies: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Supabase', 'Third Party Integration'],
+    link: 'https://tradewolf.ai',
+    company: 'Tradewolf',
+  },
+  {
     title: 'Crypto Wallet Mobile App',
     description: 'Mobile application for cryptocurrency wallet management with secure transactions.',
     role: 'Mobile UI Development',
@@ -272,7 +280,7 @@ export default function WorkPage() {
             </div>
             <div className="text-center animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
               <p className="text-5xl font-bold mb-2" style={{ color: 'var(--purple-light)' }}>
-                50+
+                100+
               </p>
               <p className="text-foreground/60">Students Trained</p>
             </div>
