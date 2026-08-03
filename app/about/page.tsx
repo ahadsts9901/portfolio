@@ -221,6 +221,14 @@ export default function AboutPage() {
                 Understanding penetration testing, securing network infrastructure, and identifying system vulnerabilities.
               </p>
             </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.7s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">Agentic AI</h3>
+              <p className="text-foreground/70">
+                Building autonomous AI agents, orchestrating multi-agent workflows, and integrating LLMs for complex problem solving.
+              </p>
+            </div>
+            
           </div>
         </div>
       </section>
