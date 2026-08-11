@@ -228,6 +228,20 @@ export default function AboutPage() {
                 Building autonomous AI agents, orchestrating multi-agent workflows, and integrating LLMs for complex problem solving.
               </p>
             </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.8s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">Data Science</h3>
+              <p className="text-foreground/70">
+                Extracting actionable insights, building predictive models, and analyzing complex datasets to drive strategic decisions.
+              </p>
+            </div>
+
+            <div className="accent-border-hover bg-card border border-border rounded-2xl p-8 animate-slide-in-bottom" style={{ animationDelay: '0.9s' } as React.CSSProperties}>
+              <h3 className="text-2xl font-bold mb-3">System Design</h3>
+              <p className="text-foreground/70">
+                Architecting scalable distributed systems, designing resilient microservices, and optimizing for high availability.
+              </p>
+            </div>
             
           </div>
         </div>
