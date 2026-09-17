@@ -48,7 +48,7 @@ const projects = [
   },
   {
     title: "E Commerce Platform with Data Automation",
-    description: "E-commerce platform featuring third-party integrations, dynamic Excel report generation, core backend architecture, automated CRON jobs, and a complete partner management system.",
+    description: "E-commerce platform with third-party integrations, automated CRON jobs, Excel reports, and partner management.",
     role: "Backend Developer",
     technologies: ["Node.js", "Express.js", "MongoDB", "Google Cloud Platform"],
     link: "https://happyher.com",
