@@ -39,7 +39,7 @@ export default function Home() {
               onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
             >
               <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
-                3+
+                3.5+
               </p>
               <p className="text-sm text-foreground/60">Years Experience</p>
             </div>
