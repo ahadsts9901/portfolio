@@ -47,6 +47,14 @@ const projects = [
     company: 'Carz AI UK',
   },
   {
+    title: "E Commerce Platform with Data Automation",
+    description: "E-commerce platform featuring third-party integrations, dynamic Excel report generation, core backend architecture, automated CRON jobs, and a complete partner management system.",
+    role: "Backend Developer",
+    technologies: ["Node.js", "Express.js", "MongoDB", "Google Cloud Platform"],
+    link: "https://happyher.com",
+    company: "Happyher"
+  },
+  {
     title: 'Roofing System Admin Dashboard',
     description: 'Complete admin dashboard and website for roofing services with project management and customer portal.',
     role: 'Frontend & Backend',
