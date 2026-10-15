@@ -4,6 +4,7 @@ import { Space_Mono } from 'next/font/google'
 import { Provider } from '@/components/theme-provider'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
+import { InteractionScripts } from '@/components/ambient-canvas'
 import './globals.css'
 
 const spaceMono = Space_Mono({
@@ -58,13 +59,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceMono.variable} bg-background`}>
+    <html lang="en" suppressHydrationWarning className={`${spaceMono.variable} bg-background`}>
       <head>
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
       </head>
       <body className="font-sans antialiased">
         <Provider>
+          <InteractionScripts />
           <Header />
           <main className="min-h-screen">
             {children}

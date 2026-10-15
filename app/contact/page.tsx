@@ -101,8 +101,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left">Get in Touch</h1>
-          <p className="text-xl text-foreground/70 animate-slide-in-bottom">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left animate-float-text">Get in Touch</h1>
+          <p className="text-xl text-foreground/70 animate-slide-in-bottom animate-float-text">
             Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
           </p>
         </div>
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 href={method.href}
                 target={method.href.startsWith('http') ? '_blank' : undefined}
                 rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group bg-background border border-border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
+                className="contact-card group bg-background border border-border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-primary">

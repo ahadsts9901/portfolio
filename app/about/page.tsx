@@ -55,12 +55,15 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 px-4 md:px-12 lg:px-20">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left">About Me</h1>
-          <p className="text-xl text-foreground/70 leading-relaxed">
+      <section className="about-hero py-20 px-4 md:px-12 lg:px-20">
+        <div className="max-w-6xl mx-auto about-hero-grid">
+          <div>
+            <p className="eyebrow mb-5">THE PERSON BEHIND THE SYSTEMS</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left animate-float-text">About Me</h1>
+            <p className="text-xl text-foreground/70 leading-relaxed animate-float-text">
             I&apos;m a full-stack developer from Karachi, Pakistan, with 3+ years of experience building scalable web applications. I&apos;m passionate about creating elegant solutions to complex problems and mentoring the next generation of developers.
-          </p>
+            </p>
+          </div>
         </div>
       </section>
 

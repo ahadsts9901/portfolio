@@ -27,7 +27,7 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="site-header sticky top-0 z-50 w-full border-b border-border/50 bg-background/55 backdrop-blur-xl backdrop-saturate-150 shadow-[0_8px_30px_hsl(var(--foreground)/0.04)]">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link

@@ -1,261 +1,46 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Code2, Zap, Users } from 'lucide-react'
+import { ArrowUpRight, Code2, Database, MoveUpRight, Radio, Terminal } from 'lucide-react'
+import { Magnetic, Reveal } from '@/components/ambient-canvas'
+
+const expertise = [
+  { icon: Code2, index: '01', title: 'Interface systems', text: 'Purposeful interfaces with a focus on speed, clarity, and memorable details.', tags: ['React', 'Next.js', 'TypeScript'] },
+  { icon: Database, index: '02', title: 'Backend architecture', text: 'Reliable infrastructure that scales with the product, not against it.', tags: ['Node.js', 'PostgreSQL', 'APIs'] },
+  { icon: Terminal, index: '03', title: 'Technical leadership', text: 'Shipping culture, clear systems, and teams that move with intent.', tags: ['AWS', 'CI/CD', 'Mentoring'] },
+]
+
+const projects = [
+  { number: '001', title: 'E-Commerce Platform', type: 'PRODUCT / FULL-STACK', text: 'A conversion-focused commerce system with payments, inventory, and real-time updates.', stack: 'React · Node.js · MongoDB', href: 'https://mern-store-gold.vercel.app' },
+  { number: '002', title: 'Coupon Intelligence', type: 'SAAS / PLATFORM', text: 'A multilingual ERP and analytics platform built for modern retail operators.', stack: 'Next.js · AWS · Redux', href: 'https://coupzone.com' },
+]
 
 export default function Home() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 md:px-12 lg:px-20 py-20">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Profile Image */}
-          <div className="relative inline-block animate-slide-in-top">
-            <Image
-              src="/ahad.png"
-              alt="Muhammad Ahad"
-              width={200}
-              height={200}
-              priority
-              className="rounded-full w-48 h-48 object-cover border-4 border-primary"
-            />
-          </div>
-
-          {/* Title & Subtitle */}
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-balance animate-slide-in-bottom">
-              Meet <br /> Muhammad Ahad
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground/70 text-balance animate-fade-in" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
-              Full-stack developer passionate about building scalable web applications and leading technical teams
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 pt-4">
-            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.4s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
-                3.5+
-              </p>
-              <p className="text-sm text-foreground/60">Years Experience</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.5s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
-                8+
-              </p>
-              <p className="text-sm text-foreground/60">Products Built</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-4 transition-colors animate-slide-in-bottom" style={{ animationDelay: '0.6s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--purple-light)' }}>
-                100+
-              </p>
-              <p className="text-sm text-foreground/60">Students Trained</p>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Link
-              href="/work"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-80 transition-all duration-300"
-            >
-              View My Work
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-primary hover:bg-secondary transition-all duration-300"
-            >
-              Get in Touch
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+    <div className="site-shell">
+      <section className="hero-section page-grid">
+        <div className="hero-kicker"><span className="status-dot" /> AVAILABLE FOR SELECT PROJECTS <span className="hero-year">© 2026</span></div>
+        <div className="hero-content">
+          <Reveal><p className="eyebrow">FULL-STACK DEVELOPER / BUILDER</p></Reveal>
+          <Reveal className="hero-title-wrap"><h1 className="hero-title">Ideas into<br /><span className="outline-text">interfaces.</span></h1></Reveal>
+          <Reveal className="hero-copy-wrap"><p className="hero-copy">I&apos;m Muhammad Ahad — a product-minded engineer building sharp digital experiences and scalable systems for ambitious teams.</p></Reveal>
+          <Reveal className="hero-actions"><Magnetic><Link href="/work" className="button button-solid">Explore selected work <ArrowUpRight size={16} /></Link></Magnetic><Magnetic><Link href="/contact" className="button button-ghost">Start a conversation <MoveUpRight size={16} /></Link></Magnetic></Reveal>
+          <Reveal className="hero-stats"><div><strong>3.5+</strong><span>YEARS EXPERIENCE</span></div><div><strong>8+</strong><span>PRODUCTS BUILT</span></div><div><strong>100+</strong><span>STUDENTS TRAINED</span></div></Reveal>
         </div>
+        <div className="hero-side-note">SCROLL TO<br />DISCOVER <span>↓</span></div>
+        <div className="hero-index">01 <span>/</span> 04</div>
       </section>
 
-      {/* Expertise Section */}
-      <section className="py-20 px-4 md:px-12 lg:px-20 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 animate-slide-in-left">Core Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Frontend */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.1s' } as React.CSSProperties}>
-              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Code2 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Frontend Development</h3>
-              <p className="text-foreground/60 mb-6">
-                Building responsive, high-performance user interfaces with React, Next.js, and modern web technologies.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'TypeScript', 'Tailwind CSS'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+      <section className="marquee-strip" aria-label="Services"><div>DESIGNING FORWARD — ENGINEERING WITH INTENT — BUILDING WHAT&apos;S NEXT — DESIGNING FORWARD — ENGINEERING WITH INTENT —</div></section>
 
-            {/* Backend */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}>
-              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Backend Development</h3>
-              <p className="text-foreground/60 mb-6">
-                Designing scalable server architectures with Node.js, Express, NestJS, and database optimization.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Node.js', 'Express', 'NestJS', 'MongoDB', 'PostgreSQL'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* DevOps & Leadership */}
-            <div className="group bg-background border border-border rounded-2xl p-8 hover:border-primary transition-all duration-300 animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}>
-              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Users className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">DevOps & Leadership</h3>
-              <p className="text-foreground/60 mb-6">
-                Managing deployment pipelines, mentoring teams, and architecting enterprise solutions.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Docker', 'AWS', 'CI/CD', 'Team Leadership'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="section page-grid" id="expertise">
+        <div className="section-label"><span>02</span> / EXPERTISE</div>
+        <div className="section-main"><Reveal><h2 className="section-heading">The craft<br /><span className="muted-heading">behind the work.</span></h2></Reveal><div className="expertise-grid">{expertise.map(({ icon: Icon, index, title, text, tags }) => <Reveal key={title} className="expertise-card"><div className="card-top"><span>{index}</span><Icon size={20} strokeWidth={1.5} /></div><h3>{title}</h3><p>{text}</p><div className="tag-row">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div></Reveal>)}</div></div>
       </section>
 
-      {/* Featured Projects Preview */}
-      <section className="py-20 px-4 md:px-12 lg:px-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-16">
-            <h2 className="text-4xl font-bold animate-slide-in-left">Featured Projects</h2>
-            <Link
-              href="/work"
-              className="flex items-center gap-2 text-primary hover:opacity-70 font-semibold transition-opacity"
-            >
-              View All
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+      <section className="section projects-section page-grid"><div className="section-label"><span>03</span> / SELECTED WORK</div><div className="section-main"><div className="section-heading-row"><Reveal><h2 className="section-heading">Selected<br /><span className="muted-heading">signals.</span></h2></Reveal><Link href="/work" className="text-link">View all work <ArrowUpRight size={15} /></Link></div><div className="projects-list">{projects.map((project) => <Reveal key={project.number} className="project-card"><div className="project-number">{project.number}</div><div className="project-info"><p className="eyebrow">{project.type}</p><h3>{project.title}</h3><p>{project.text}</p><span className="project-stack">{project.stack}</span></div><a href={project.href} target="_blank" rel="noreferrer" className="project-link" aria-label={`View ${project.title}`}><ArrowUpRight size={24} /></a></Reveal>)}</div></div></section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg animate-slide-in-bottom" style={{ animationDelay: '0.2s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              {/* <div className="h-48 bg-secondary relative overflow-hidden"></div> */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3">E-Commerce Platform</h3>
-                <p className="text-foreground/60 mb-6">
-                  Full-stack MERN application with payment gateway integration, inventory management, and real-time inventory updates.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {['React', 'Node.js', 'MongoDB', 'Stripe'].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href="https://mern-store-gold.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:opacity-70 font-semibold transition-opacity"
-                >
-                  View Project
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="group bg-card border border-border rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg animate-slide-in-bottom" style={{ animationDelay: '0.3s' } as React.CSSProperties}
-              onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-hover)'}
-              onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
-            >
-              {/* <div className="h-48 bg-secondary relative overflow-hidden"></div> */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3">SaaS Coupon Platform</h3>
-                <p className="text-foreground/60 mb-6">
-                  Multi-language, multi-currency ERP system with advanced couponing, analytics dashboard, and vendor management.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {['Next.js', 'MongoDB', 'AWS', 'Redux'].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary/80"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href="https://coupzone.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:opacity-70 font-semibold transition-opacity"
-                >
-                  View Project
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 md:px-12 lg:px-20 bg-secondary border-y border-border">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4 animate-fade-in">
-            <h2 className="text-4xl font-bold">Ready to Build Something Great?</h2>
-            <p className="text-lg text-foreground/60">
-              Let&apos;s collaborate on your next project and bring your ideas to life.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-80 transition-all duration-300"
-          >
-            Start a Project
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
-    </>
+      <section className="contact-banner page-grid"><div className="section-label"><span>04</span> / NEXT MOVE</div><div className="contact-main"><p className="eyebrow">HAVE A GOOD ONE?</p><h2>Let&apos;s make<br /><span>something real.</span></h2><Link href="/contact" className="button button-solid">Get in touch <ArrowUpRight size={16} /></Link></div><div className="contact-meta"><a href="mailto:muhammadahadansari2@gmail.com">muhammadahadansari2@gmail.com</a><div className="social-row"><a href="https://github.com/ahadsts9901" aria-label="GitHub">GH</a><a href="https://linkedin.com/in/ahadsts9901" aria-label="LinkedIn">IN</a><Radio size={18} /></div></div></section>
+    </div>
   )
 }

@@ -48,10 +48,16 @@ export function ColorPicker() {
   }, [isOpen])
 
   const applyColor = (color: typeof COLOR_PALETTE[0]) => {
-    document.documentElement.style.setProperty('--purple-light', color.light)
-    document.documentElement.style.setProperty('--purple-dark', color.dark)
-    document.documentElement.style.setProperty('--accent-primary', color.primary)
-    document.documentElement.style.setProperty('--accent-hover', color.hover)
+    const root = document.documentElement
+    root.dataset.accent = color.name.toLowerCase()
+    root.style.setProperty('--purple-light', color.light)
+    root.style.setProperty('--purple-dark', color.dark)
+    root.style.setProperty('--accent-primary', color.primary)
+    root.style.setProperty('--accent-hover', color.hover)
+    root.style.setProperty('--primary', color.primary)
+    root.style.setProperty('--accent', color.primary)
+    root.style.setProperty('--ring', color.hover)
+    root.style.setProperty('--selection-color', color.hover)
   }
 
   const handleColorChange = (color: typeof COLOR_PALETTE[0]) => {
@@ -61,10 +67,8 @@ export function ColorPicker() {
     setIsOpen(false)
   }
 
-  if (!mounted) return null
-
   return (
-    <div className="relative" ref={containerRef}>
+    <div className="relative z-[60]" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors flex items-center gap-2 cursor-pointer"
@@ -75,13 +79,22 @@ export function ColorPicker() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 bg-card border border-border rounded-lg shadow-lg p-4 z-50 w-48">
+        <div
+          className="color-picker-menu fixed top-20 right-4 bg-card border border-border rounded-lg shadow-lg p-4 z-[100] w-48 pointer-events-auto"
+          onPointerDown={(event) => event.stopPropagation()}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
           <p className="text-sm font-semibold text-foreground mb-3">Accent Color</p>
           <div className="grid grid-cols-4 gap-2">
             {COLOR_PALETTE.map((color) => (
               <button
                 key={color.name}
-                onClick={() => handleColorChange(color)}
+                type="button"
+                onPointerDown={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation()
+                  handleColorChange(color)
+                }}
                 className={`w-8 h-8 rounded-lg transition-all cursor-pointer ${
                   selectedColor.name === color.name
                     ? 'ring-2 ring-foreground scale-110'
