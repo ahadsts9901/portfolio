@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, Code2, Database, MoveUpRight, Radio, Terminal } from 'lucide-react'
 import { Magnetic, Reveal } from '@/components/ambient-canvas'
@@ -16,11 +17,26 @@ const projects = [
 ]
 
 export default function Home() {
+  const [parallaxY, setParallaxY] = useState(0)
+
+  useEffect(() => {
+    let frame = 0
+    const updateParallax = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => setParallaxY(Math.min(window.scrollY * 0.14, 96)))
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', updateParallax)
+    }
+  }, [])
+
   return (
     <div className="site-shell">
       <section className="hero-section page-grid">
         <div className="hero-kicker"><span className="status-dot" /> AVAILABLE FOR SELECT PROJECTS <span className="hero-year">© 2026</span></div>
-        <div className="hero-content">
+        <div className="hero-content" style={{ transform: `translate3d(0, ${parallaxY}px, 0)` }}>
           <Reveal><p className="eyebrow">FULL-STACK DEVELOPER / BUILDER</p></Reveal>
           <Reveal className="hero-title-wrap"><h1 className="hero-title">Ideas into<br /><span className="outline-text">interfaces.</span></h1></Reveal>
           <Reveal className="hero-copy-wrap"><p className="hero-copy">I&apos;m Muhammad Ahad — a product-minded engineer building sharp digital experiences and scalable systems for ambitious teams.</p></Reveal>
