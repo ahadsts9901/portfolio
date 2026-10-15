@@ -48,13 +48,16 @@ export function ColorPicker() {
   }, [isOpen])
 
   const applyColor = (color: typeof COLOR_PALETTE[0]) => {
-    document.documentElement.style.setProperty('--purple-light', color.light)
-    document.documentElement.style.setProperty('--purple-dark', color.dark)
-    document.documentElement.style.setProperty('--accent-primary', color.primary)
-    document.documentElement.style.setProperty('--accent-hover', color.hover)
-    document.documentElement.style.setProperty('--primary', color.primary)
-    document.documentElement.style.setProperty('--accent', color.primary)
-    document.documentElement.style.setProperty('--ring', color.hover)
+    const root = document.documentElement
+    root.dataset.accent = color.name.toLowerCase()
+    root.style.setProperty('--purple-light', color.light)
+    root.style.setProperty('--purple-dark', color.dark)
+    root.style.setProperty('--accent-primary', color.primary)
+    root.style.setProperty('--accent-hover', color.hover)
+    root.style.setProperty('--primary', color.primary)
+    root.style.setProperty('--accent', color.primary)
+    root.style.setProperty('--ring', color.hover)
+    root.style.setProperty('--selection-color', color.hover)
   }
 
   const handleColorChange = (color: typeof COLOR_PALETTE[0]) => {

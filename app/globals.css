@@ -131,6 +131,7 @@
 
   body {
     @apply bg-background text-foreground;
+    min-width: 0;
   }
 
   html {
@@ -368,3 +369,67 @@ body:has(.about-hero) main section,
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+
+/* Keep the active palette visible in every theme and viewport. */
+::selection, ::-moz-selection {
+  background: color-mix(in srgb, var(--selection-color, var(--accent-hover)) 28%, transparent) !important;
+  color: var(--foreground) !important;
+}
+
+.button-solid:hover,
+.button-ghost:hover,
+.text-link:hover,
+.project-link:hover,
+.social-row a:hover {
+  color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-section { padding-left: 28px; padding-right: 28px; }
+  .hero-content { min-width: 0; padding-right: clamp(0px, 12vw, 150px); }
+  .hero-title { font-size: clamp(4rem, 10vw, 7.5rem); }
+  .hero-copy { max-width: min(440px, 62vw); }
+  .hero-portrait { right: 28px; width: clamp(118px, 19vw, 190px); }
+  .expertise-card { min-width: 0; padding: 20px; }
+  .project-info { min-width: 0; }
+  .project-info h3, .project-info > p:not(.eyebrow) { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 700px) {
+  .hero-section { min-height: auto; padding: 92px 22px 48px; overflow: hidden; }
+  .hero-kicker { inset: 22px 22px auto; font-size: 8px; }
+  .hero-content { padding: 24px 0 0; }
+  .hero-title { max-width: 100%; font-size: clamp(3.5rem, 17vw, 6rem); }
+  .hero-copy { max-width: 62%; font-size: 13px; }
+  .hero-portrait-wrap { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .hero-portrait { right: 18px; top: 124px; width: clamp(94px, 27vw, 132px); opacity: .48; }
+  .hero-content > *:not(.hero-portrait-wrap) { position: relative; z-index: 1; }
+  .hero-actions { max-width: 100%; }
+  .button { max-width: 100%; padding: 12px 14px; font-size: 9px; }
+  .hero-stats { position: relative; z-index: 1; gap: 14px; max-width: 100%; }
+  .hero-stats div { min-width: 0; }
+  .hero-stats span { white-space: normal; line-height: 1.25; }
+  .section, .contact-banner { overflow: hidden; }
+  .section-heading { max-width: 100%; font-size: clamp(2.8rem, 13vw, 5rem); overflow-wrap: anywhere; }
+  .section-heading-row { min-width: 0; }
+  .project-card { min-width: 0; }
+  .project-link { align-self: center; }
+}
+
+@media (max-width: 420px) {
+  .hero-copy { max-width: 100%; padding-right: 78px; overflow-wrap: anywhere; }
+  .hero-title { font-size: 10.5vw; letter-spacing: -.12em; line-height: .9; max-width: calc(100vw - 44px); overflow-wrap: normal; }
+  .hero-portrait { width: 86px; right: 12px; top: 118px; opacity: .35; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hero-stats strong { font-size: 1.45rem; }
+  .hero-stats span { font-size: 7px; letter-spacing: .06em; }
+  .project-card { grid-template-columns: 24px minmax(0, 1fr) 24px; gap: 7px; }
+  .project-info h3 { font-size: 17px; }
+}
+
+@media (max-width: 360px) {
+  .hero-title { font-size: 9.5vw; }
+  .hero-copy { padding-right: 0; }
+  .hero-portrait { opacity: .22; }
+}
