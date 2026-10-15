@@ -67,10 +67,8 @@ export function ColorPicker() {
     setIsOpen(false)
   }
 
-  if (!mounted) return null
-
   return (
-    <div className="relative" ref={containerRef}>
+    <div className="relative z-[60]" ref={containerRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors flex items-center gap-2 cursor-pointer"
@@ -82,7 +80,7 @@ export function ColorPicker() {
 
       {isOpen && (
         <div
-          className="absolute right-0 mt-2 bg-card border border-border rounded-lg shadow-lg p-4 z-[9999] w-48 pointer-events-auto"
+          className="color-picker-menu fixed top-20 right-4 bg-card border border-border rounded-lg shadow-lg p-4 z-[100] w-48 pointer-events-auto"
           onPointerDown={(event) => event.stopPropagation()}
           onMouseDown={(event) => event.stopPropagation()}
         >
@@ -92,12 +90,11 @@ export function ColorPicker() {
               <button
                 key={color.name}
                 type="button"
-                onPointerDown={(event) => {
-                  event.preventDefault()
+                onPointerDown={(event) => event.stopPropagation()}
+                onClick={(event) => {
                   event.stopPropagation()
                   handleColorChange(color)
                 }}
-                onClick={(event) => event.stopPropagation()}
                 className={`w-8 h-8 rounded-lg transition-all cursor-pointer ${
                   selectedColor.name === color.name
                     ? 'ring-2 ring-foreground scale-110'

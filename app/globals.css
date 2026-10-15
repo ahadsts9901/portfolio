@@ -311,7 +311,9 @@ body { background: var(--background); color: var(--foreground); cursor: none; ov
 a, button, input, textarea, select { cursor: none; }
   .ambient-canvas { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .72; mix-blend-mode: screen; }
 body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent-hover) 8%, transparent), transparent 34%), radial-gradient(circle at 82% 72%, color-mix(in srgb, var(--accent-hover) 6%, transparent), transparent 38%); }
-main, header, footer { position: relative; z-index: 3; }
+  main, footer { position: relative; z-index: 3; }
+  header { position: relative; z-index: 60 !important; isolation: isolate; }
+  .color-picker-menu { isolation: isolate; transform: translateZ(0); pointer-events: auto !important; }
   .cursor-follower { position: fixed; left: 0; top: 0; z-index: 100; width: 18px; height: 18px; border: 1px solid var(--accent-hover); border-radius: 50% !important; pointer-events: none; opacity: .72; transition: opacity .2s, width .25s, height .25s, margin .25s, background .25s; }
   .cursor-active .cursor-follower { width: 40px; height: 40px; margin: -11px; background: color-mix(in srgb, var(--accent-hover) 18%, transparent); border-color: var(--accent-hover); opacity: 1; }
   ::selection, ::-moz-selection { background: color-mix(in srgb, var(--accent-hover) 34%, transparent) !important; color: var(--foreground) !important; }
