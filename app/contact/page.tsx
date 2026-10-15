@@ -119,7 +119,7 @@ export default function ContactPage() {
                 href={method.href}
                 target={method.href.startsWith('http') ? '_blank' : undefined}
                 rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group bg-background border border-border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
+                className="contact-card group bg-background border border-border rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform text-lg font-semibold text-primary">

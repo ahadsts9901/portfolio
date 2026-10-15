@@ -313,6 +313,18 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events
 main, header, footer { position: relative; z-index: 3; }
   .cursor-follower { position: fixed; left: 0; top: 0; z-index: 100; width: 18px; height: 18px; border: 1px solid var(--accent-hover); border-radius: 50% !important; pointer-events: none; opacity: .72; transition: opacity .2s, width .25s, height .25s, margin .25s, background .25s; }
   .cursor-active .cursor-follower { width: 40px; height: 40px; margin: -11px; background: color-mix(in srgb, var(--accent-hover) 18%, transparent); border-color: var(--accent-hover); opacity: 1; }
+  ::selection, ::-moz-selection { background: color-mix(in srgb, var(--accent-hover) 34%, transparent) !important; color: var(--foreground) !important; }
+  .cursor-follower { mix-blend-mode: normal; }
+  .group:hover h3, .group:hover p, .group:hover span, .group:hover .font-semibold { color: var(--accent-hover) !important; }
+  .bg-card, .bg-background { background-color: color-mix(in srgb, var(--card) 78%, transparent) !important; }
+  .border-border { border-color: color-mix(in srgb, var(--accent-hover) 28%, transparent) !important; }
+  .contact-banner, .contact-methods, .contact-card { background-color: color-mix(in srgb, var(--card) 72%, transparent); }
+  .hero-portrait-wrap { align-self: center; justify-self: end; grid-column: 2; grid-row: 1 / span 4; z-index: 1; }
+  .hero-portrait { position: relative; width: clamp(150px, 24vw, 280px); aspect-ratio: 0.82; overflow: hidden; filter: grayscale(1) contrast(1.08); border: 1px solid color-mix(in srgb, var(--accent-hover) 55%, transparent); animation: portrait-wave 8s ease-in-out infinite; box-shadow: 0 0 70px color-mix(in srgb, var(--accent-hover) 14%, transparent); }
+  .hero-portrait img, .about-portrait img { object-fit: cover; filter: grayscale(1); }
+  @keyframes portrait-wave { 0%, 100% { border-radius: 42% 58% 62% 38% / 38% 44% 56% 62%; transform: rotate(-2deg); } 50% { border-radius: 62% 38% 38% 62% / 52% 62% 38% 48%; transform: rotate(2deg) translateY(-8px); } }
+  .animate-slide-in-left, .animate-slide-in-bottom, .animate-fade-in { animation-fill-mode: both; }
+  @media (max-width: 700px) { .hero-portrait-wrap { grid-column: 2; grid-row: 1 / span 3; opacity: .72; } .hero-portrait { width: 125px; } }
 .site-shell { position: relative; z-index: 1; }
 .page-grid { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 4fr); position: relative; }
 .hero-section { min-height: calc(100vh - 65px); padding: 28px clamp(22px, 5vw, 80px) 52px; border-bottom: 1px solid var(--grid-line); align-content: center; }

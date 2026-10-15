@@ -214,7 +214,7 @@ export default function WorkPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="accent-border-hover group h-full bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:shadow-lg flex flex-col animate-slide-in-bottom"
+                className="contact-card accent-border-hover group h-full bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:shadow-lg flex flex-col animate-slide-in-bottom"
                 style={{ animationDelay: `${index * 0.05}s` } as React.CSSProperties}
               >
                 {/* Header */}
