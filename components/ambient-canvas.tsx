@@ -59,7 +59,7 @@ export function AmbientCanvas() {
         const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-hover').trim() || '#a78bfa'
         const glow = 0.7 + Math.sin(particle.pulse) * 0.3
         context.shadowColor = accent
-        context.shadowBlur = particle.size > 2 ? 12 : 6
+        context.shadowBlur = particle.size > 2 ? 16 : 8
         context.fillStyle = accent
         context.globalAlpha = 0.72 + glow * 0.28
         context.beginPath()
