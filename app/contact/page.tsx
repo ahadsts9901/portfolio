@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Mail, MessageCircle, Phone
 } from 'lucide-react'
@@ -15,6 +15,20 @@ export default function ContactPage() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [parallaxY, setParallaxY] = useState(0)
+
+  useEffect(() => {
+    let frame = 0
+    const updateParallax = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => setParallaxY(window.scrollY * 0.18))
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true })
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', updateParallax)
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -100,7 +114,7 @@ export default function ContactPage() {
     <>
       {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="contact-hero-copy max-w-4xl mx-auto text-left">
+        <div className="contact-hero-copy max-w-4xl mx-auto text-left" style={{ transform: `translate3d(0, ${parallaxY}px, 0)` }}>
           <span className="contact-hero-eyebrow">Start a conversation</span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left animate-float-text">Get in Touch</h1>
           <p className="text-xl text-foreground/70 animate-slide-in-bottom animate-float-text">
