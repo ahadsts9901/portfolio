@@ -309,8 +309,8 @@
 html { scroll-behavior: smooth; }
 body { background: var(--background); color: var(--foreground); cursor: none; overflow-x: hidden; }
 a, button, input, textarea, select { cursor: none; }
-  .ambient-canvas { position: fixed !important; inset: 0; z-index: 2 !important; pointer-events: none !important; opacity: .9 !important; mix-blend-mode: screen; }
-body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent-hover) 8%, transparent), transparent 34%), radial-gradient(circle at 82% 72%, color-mix(in srgb, var(--accent-hover) 6%, transparent), transparent 38%); }
+  .ambient-canvas { position: fixed !important; inset: 0; z-index: 2 !important; pointer-events: none !important; opacity: 1 !important; mix-blend-mode: screen; }
+body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 12% 16%, color-mix(in srgb, var(--accent-hover) 14%, transparent), transparent 28%), radial-gradient(circle at 88% 30%, color-mix(in srgb, var(--accent-hover) 10%, transparent), transparent 25%), radial-gradient(circle at 70% 86%, color-mix(in srgb, var(--accent-hover) 9%, transparent), transparent 32%); opacity: .95; }
   main, footer { position: relative; z-index: 3; }
   header { position: relative; z-index: 60 !important; isolation: isolate; }
   .color-picker-menu { isolation: isolate; transform: translateZ(0); pointer-events: auto !important; }

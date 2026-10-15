@@ -15,12 +15,13 @@ export function AmbientCanvas() {
     let width = 0
     let height = 0
     const pointer = { x: -1000, y: -1000 }
-    const particles = Array.from({ length: 96 }, (_, index) => ({
+    const particles = Array.from({ length: 220 }, (_, index) => ({
       x: Math.random() * 1200,
       y: Math.random() * 800,
       vx: (Math.random() - 0.5) * 0.48,
       vy: (Math.random() - 0.5) * 0.48,
-      size: index % 5 === 0 ? 1.5 : 0.8,
+      size: index % 9 === 0 ? 2.8 : index % 3 === 0 ? 1.8 : 1.15,
+      pulse: Math.random() * Math.PI * 2,
     }))
 
     const resize = () => {
@@ -31,7 +32,7 @@ export function AmbientCanvas() {
       canvas.height = height * ratio
       canvas.style.width = `${width}px`
       canvas.style.height = `${height}px`
-      canvas.style.opacity = '0.9'
+      canvas.style.opacity = '1'
       context.setTransform(ratio, 0, 0, ratio, 0, 0)
     }
 
@@ -52,11 +53,20 @@ export function AmbientCanvas() {
         }
         particle.x += particle.vx
         particle.y += particle.vy
+        particle.pulse += 0.025
         if (particle.x < -10 || particle.x > width + 10) particle.vx *= -1
         if (particle.y < -10 || particle.y > height + 10) particle.vy *= -1
         const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-hover').trim() || '#a78bfa'
-        context.fillStyle = `${accent}aa`
-        context.fillRect(particle.x, particle.y, particle.size, particle.size)
+        const glow = 0.7 + Math.sin(particle.pulse) * 0.3
+        context.shadowColor = accent
+        context.shadowBlur = particle.size > 2 ? 12 : 6
+        context.fillStyle = accent
+        context.globalAlpha = 0.72 + glow * 0.28
+        context.beginPath()
+        context.arc(particle.x, particle.y, particle.size * glow, 0, Math.PI * 2)
+        context.fill()
+        context.shadowBlur = 0
+        context.globalAlpha = 1
       }
       for (let i = 0; i < particles.length; i += 1) {
         for (let j = i + 1; j < particles.length; j += 1) {
