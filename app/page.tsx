@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, Code2, Database, MoveUpRight, Radio, Terminal } from 'lucide-react'
 import { InteractionScripts, Magnetic, Reveal } from '@/components/ambient-canvas'
@@ -26,7 +27,9 @@ export default function Home() {
           <Reveal className="hero-title-wrap"><h1 className="hero-title">Ideas into<br /><span className="outline-text">interfaces.</span></h1></Reveal>
           <Reveal className="hero-copy-wrap"><p className="hero-copy">I&apos;m Muhammad Ahad — a product-minded engineer building sharp digital experiences and scalable systems for ambitious teams.</p></Reveal>
           <Reveal className="hero-actions"><Magnetic><Link href="/work" className="button button-solid">Explore selected work <ArrowUpRight size={16} /></Link></Magnetic><Magnetic><Link href="/contact" className="button button-ghost">Start a conversation <MoveUpRight size={16} /></Link></Magnetic></Reveal>
+          <Reveal className="hero-stats"><div><strong>3+</strong><span>YEARS EXPERIENCE</span></div><div><strong>8+</strong><span>PROJECTS DELIVERED</span></div><div><strong>50+</strong><span>STUDENTS TRAINED</span></div></Reveal>
         </div>
+        <Reveal className="hero-portrait"><Image src="/ahad.png" alt="Muhammad Ahad" fill priority sizes="(max-width: 700px) 38vw, 220px" /></Reveal>
         <div className="hero-side-note">SCROLL TO<br />DISCOVER <span>↓</span></div>
         <div className="hero-index">01 <span>/</span> 04</div>
       </section>
