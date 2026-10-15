@@ -101,8 +101,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left">Get in Touch</h1>
-          <p className="text-xl text-foreground/70 animate-slide-in-bottom">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-in-left animate-float-text">Get in Touch</h1>
+          <p className="text-xl text-foreground/70 animate-slide-in-bottom animate-float-text">
             Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
           </p>
         </div>

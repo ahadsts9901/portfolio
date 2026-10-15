@@ -52,6 +52,9 @@ export function ColorPicker() {
     document.documentElement.style.setProperty('--purple-dark', color.dark)
     document.documentElement.style.setProperty('--accent-primary', color.primary)
     document.documentElement.style.setProperty('--accent-hover', color.hover)
+    document.documentElement.style.setProperty('--primary', color.primary)
+    document.documentElement.style.setProperty('--accent', color.primary)
+    document.documentElement.style.setProperty('--ring', color.hover)
   }
 
   const handleColorChange = (color: typeof COLOR_PALETTE[0]) => {

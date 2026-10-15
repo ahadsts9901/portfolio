@@ -55,7 +55,7 @@
   --card-foreground: #000000;
   --popover: #ffffff;
   --popover-foreground: #000000;
-  --primary: #000000;
+  --primary: var(--accent-primary, #7c3aed);
   --primary-foreground: #ffffff;
   --secondary: #f0f0f0;
   --secondary-foreground: #000000;
@@ -93,8 +93,8 @@
   --card-foreground: #ffffff;
   --popover: #1a1a1a;
   --popover-foreground: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
+  --primary: var(--accent-primary, #7c3aed);
+  --primary-foreground: #ffffff;
   --secondary: #2a2a2a;
   --secondary-foreground: #ffffff;
   --muted: #333333;
@@ -341,4 +341,30 @@ main, header, footer { position: relative; z-index: 3; }
 .about-portrait img { object-fit: cover; transition: filter .5s ease, transform .5s ease; }
 .about-portrait:hover img { filter: grayscale(0); transform: scale(1.06); }
 @media (max-width: 700px) { body, a, button { cursor: auto; }.cursor-follower { display: none; }.page-grid { grid-template-columns: 1fr; }.hero-content, .section-main, .contact-main, .contact-meta { grid-column: 1; }.hero-section { min-height: 90vh; padding-top: 100px; }.hero-title { font-size: clamp(4rem, 19vw, 7rem); }.hero-portrait { width: 112px; right: 22px; top: 126px; transform: none; }.about-hero-grid { grid-template-columns: 1fr; gap: 36px; }.about-portrait { width: 190px; justify-self: end; }.hero-stats { gap: 18px; margin-top: 38px; flex-wrap: wrap; }.hero-stats span { font-size: 8px; }.hero-side-note { display: none; }.hero-index { left: auto; right: 22px; }.section, .contact-banner { padding: 80px 22px; }.section-label { margin-bottom: 50px; }.expertise-grid { grid-template-columns: 1fr; }.expertise-card { min-height: auto; }.section-heading { margin-bottom: 48px; }.section-heading-row { display: block; }.text-link { margin-bottom: 42px; }.project-card { grid-template-columns: 35px 1fr 35px; gap: 10px; }.project-card:hover { padding-left: 8px; }.contact-meta { margin-top: 80px; align-items: start; flex-direction: column; gap: 26px; } }
+/* Shared glass surfaces and subtle motion across inner pages. */
+.glass-surface,
+.about-hero,
+.about-hero + section,
+.about-hero ~ section,
+.contact-card,
+.contact-banner,
+.contact-methods,
+body:has(.contact-card) main section,
+body:has(.project-card) main section,
+body:has(.about-hero) main section,
+.expertise-card,
+.project-card,
+.bg-card {
+  background: color-mix(in srgb, var(--card) 64%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent-hover) 30%, transparent) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.animate-float-text { animation: float-text 5s ease-in-out infinite; }
+@keyframes float-text {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }

@@ -199,8 +199,8 @@ export default function WorkPage() {
       <section className="py-20 px-4 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4 mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold animate-slide-in-left">My Work</h1>
-            <p className="text-xl text-foreground/60 max-w-2xl animate-slide-in-bottom">
+            <h1 className="text-5xl md:text-6xl font-bold animate-slide-in-left animate-float-text">My Work</h1>
+            <p className="text-xl text-foreground/60 max-w-2xl animate-slide-in-bottom animate-float-text">
               Over 8+ products built and delivered. From startup MVPs to enterprise-scale applications, here are some of the projects I&apos;ve worked on.
             </p>
           </div>
