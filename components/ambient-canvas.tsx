@@ -15,11 +15,11 @@ export function AmbientCanvas() {
     let width = 0
     let height = 0
     const pointer = { x: -1000, y: -1000 }
-    const particles = Array.from({ length: 48 }, (_, index) => ({
+    const particles = Array.from({ length: 96 }, (_, index) => ({
       x: Math.random() * 1200,
       y: Math.random() * 800,
-      vx: (Math.random() - 0.5) * 0.22,
-      vy: (Math.random() - 0.5) * 0.22,
+      vx: (Math.random() - 0.5) * 0.48,
+      vy: (Math.random() - 0.5) * 0.48,
       size: index % 5 === 0 ? 1.5 : 0.8,
     }))
 
@@ -31,6 +31,7 @@ export function AmbientCanvas() {
       canvas.height = height * ratio
       canvas.style.width = `${width}px`
       canvas.style.height = `${height}px`
+      canvas.style.opacity = '0.9'
       context.setTransform(ratio, 0, 0, ratio, 0, 0)
     }
 
