@@ -330,7 +330,14 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 1; pointer-events
   @keyframes portrait-wave { 0%, 100% { border-radius: 42% 58% 62% 38% / 38% 44% 56% 62%; transform: rotate(-2deg); } 50% { border-radius: 62% 38% 38% 62% / 52% 62% 38% 48%; transform: rotate(2deg) translateY(-8px); } }
   .animate-slide-in-left, .animate-slide-in-bottom, .animate-fade-in { animation-fill-mode: both; }
   @media (max-width: 700px) { .hero-portrait-wrap { grid-column: 2; grid-row: 1 / span 3; opacity: .72; } .hero-portrait { width: 125px; } }
-.site-shell { position: relative; z-index: 1; }
+  .site-shell { position: relative; z-index: 1; }
+  .contact-hero-copy { position: relative; isolation: isolate; padding: clamp(28px, 5vw, 64px); border: 1px solid color-mix(in srgb, var(--accent-hover) 24%, transparent); border-radius: 28px; background: linear-gradient(135deg, color-mix(in srgb, var(--card) 76%, transparent), color-mix(in srgb, var(--accent-hover) 7%, transparent)); box-shadow: 0 24px 80px color-mix(in srgb, var(--accent-hover) 10%, transparent); animation: contact-parallax 7s ease-in-out infinite; }
+  .contact-hero-copy::before { content: ''; position: absolute; inset: 12px; border: 1px solid color-mix(in srgb, var(--accent-hover) 14%, transparent); border-radius: 20px; pointer-events: none; }
+  .contact-hero-copy > * { position: relative; z-index: 1; }
+  .contact-hero-eyebrow { display: block; margin-bottom: 18px; color: var(--accent-hover); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  @keyframes contact-parallax { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -8px, 0); } }
+  @media (prefers-reduced-motion: reduce) { .contact-hero-copy { animation: none; } }
+
 .page-grid { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(0, 4fr); position: relative; }
 .hero-section { min-height: calc(100vh - 65px); padding: 28px clamp(22px, 5vw, 80px) 52px; border-bottom: 1px solid var(--grid-line); align-content: center; }
 .hero-section:before, .section:before, .contact-banner:before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, transparent calc(25% - 1px), var(--grid-line) 25%, transparent calc(25% + 1px)); opacity: .35; }
