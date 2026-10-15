@@ -81,13 +81,23 @@ export function ColorPicker() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 bg-card border border-border rounded-lg shadow-lg p-4 z-50 w-48">
+        <div
+          className="absolute right-0 mt-2 bg-card border border-border rounded-lg shadow-lg p-4 z-[9999] w-48 pointer-events-auto"
+          onPointerDown={(event) => event.stopPropagation()}
+          onMouseDown={(event) => event.stopPropagation()}
+        >
           <p className="text-sm font-semibold text-foreground mb-3">Accent Color</p>
           <div className="grid grid-cols-4 gap-2">
             {COLOR_PALETTE.map((color) => (
               <button
                 key={color.name}
-                onClick={() => handleColorChange(color)}
+                type="button"
+                onPointerDown={(event) => {
+                  event.preventDefault()
+                  event.stopPropagation()
+                  handleColorChange(color)
+                }}
+                onClick={(event) => event.stopPropagation()}
                 className={`w-8 h-8 rounded-lg transition-all cursor-pointer ${
                   selectedColor.name === color.name
                     ? 'ring-2 ring-foreground scale-110'
