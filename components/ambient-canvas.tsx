@@ -53,7 +53,8 @@ export function AmbientCanvas() {
         particle.y += particle.vy
         if (particle.x < -10 || particle.x > width + 10) particle.vx *= -1
         if (particle.y < -10 || particle.y > height + 10) particle.vy *= -1
-        context.fillStyle = 'rgba(255,255,255,0.42)'
+        const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-hover').trim() || '#a78bfa'
+        context.fillStyle = `${accent}aa`
         context.fillRect(particle.x, particle.y, particle.size, particle.size)
       }
       for (let i = 0; i < particles.length; i += 1) {
@@ -62,7 +63,8 @@ export function AmbientCanvas() {
           const b = particles[j]
           const distance = Math.hypot(a.x - b.x, a.y - b.y)
           if (distance < 105) {
-            context.strokeStyle = `rgba(255,255,255,${0.11 * (1 - distance / 105)})`
+            const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent-hover').trim() || '#a78bfa'
+            context.strokeStyle = `${accent}${Math.round(28 * (1 - distance / 105)).toString(16).padStart(2, '0')}`
             context.beginPath()
             context.moveTo(a.x, a.y)
             context.lineTo(b.x, b.y)

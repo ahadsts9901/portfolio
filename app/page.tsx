@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight, Code2, Database, MoveUpRight, Radio, Terminal } from 'lucide-react'
-import { InteractionScripts, Magnetic, Reveal } from '@/components/ambient-canvas'
+import { Magnetic, Reveal } from '@/components/ambient-canvas'
 
 const expertise = [
   { icon: Code2, index: '01', title: 'Interface systems', text: 'Purposeful interfaces with a focus on speed, clarity, and memorable details.', tags: ['React', 'Next.js', 'TypeScript'] },
@@ -19,7 +19,6 @@ const projects = [
 export default function Home() {
   return (
     <div className="site-shell">
-      <InteractionScripts />
       <section className="hero-section page-grid">
         <div className="hero-kicker"><span className="status-dot" /> AVAILABLE FOR SELECT PROJECTS <span className="hero-year">© 2026</span></div>
         <div className="hero-content">
