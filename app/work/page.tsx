@@ -91,7 +91,7 @@ const projects = [
     description: 'Mobile application for cryptocurrency wallet management with secure transactions.',
     role: 'Mobile UI Development',
     technologies: ['React Native', 'Expo', 'TypeScript', 'Vision Camera', 'Fingerprint Biometric'],
-    link: '#',
+    link: 'https://play.google.com/store/apps/details?id=com.vyntrics.app',
     company: 'Vyntrics',
   },
   {
